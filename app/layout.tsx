@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Icarus — See your dream build before you spend a dime",
+  title: "Atria — See your dream build before you spend a dime",
   description:
     "Fly a drone over your property. Tell our AI what you're imagining. Watch it appear in 3D on your actual lot. No architect required.",
 };

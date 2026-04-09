@@ -71,7 +71,7 @@ export function Problem() {
           for years.
         </p>
         <p className="text-base text-white/60 leading-relaxed">
-          Icarus changes that. For a fraction of the cost, in minutes instead of
+          Atria changes that. For a fraction of the cost, in minutes instead of
           weeks, you can see your build on your actual property before committing
           a dollar to construction.
         </p>
@@ -96,7 +96,7 @@ export function Waitlist() {
           Join the Waitlist
         </p>
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Be the first to try Icarus
+          Be the first to try Atria
         </h2>
         <p className="mb-8 text-base text-white/60">
           We&apos;re onboarding homeowners one by one. Grab your spot.
@@ -141,12 +141,12 @@ export function Waitlist() {
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#0a0a0a] py-8 px-6 text-center">
-      <p className="text-sm font-semibold text-white">Icarus.</p>
+      <p className="text-sm font-semibold text-white">Atria.</p>
       <p className="mt-1 text-xs text-white/30">
         See your dream build before you spend a dime.
       </p>
       <p className="mt-3 text-xs text-white/20">
-        © {new Date().getFullYear()} Icarus. All rights reserved.
+        © {new Date().getFullYear()} Atria. All rights reserved.
       </p>
     </footer>
   );
