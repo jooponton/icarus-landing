@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Lot boundary -->
+  <rect x="15" y="15" width="290" height="250" stroke-width="1.8" stroke-dasharray="8,4"/>
+  <!-- Street -->
+  <rect x="0" y="240" width="320" height="40" stroke-width="0"/>
+  <line x1="0" y1="240" x2="320" y2="240" stroke-width="1.5"/>
+  <line x1="0" y1="280" x2="320" y2="280" stroke-width="1.5"/>
+  <line x1="0" y1="260" x2="320" y2="260" stroke-width="0.6" stroke-dasharray="12,8"/>
+  <text x="130" y="256" font-size="7" font-family="monospace" fill="currentColor" stroke="none" opacity="0.6">OAK STREET</text>
+  <!-- Driveway -->
+  <polygon points="120,240 160,240 155,195 125,195" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Building footprint -->
+  <rect x="60" y="60" width="200" height="130" stroke-width="2"/>
+  <!-- Setback lines -->
+  <rect x="40" y="40" width="240" height="170" stroke-width="0.6" stroke-dasharray="5,4"/>
+  <!-- Garage -->
+  <rect x="110" y="190" width="100" height="50" stroke-width="1.5"/>
+  <line x1="110" y1="215" x2="210" y2="215" stroke-width="0.8"/>
+  <text x="130" y="210" font-size="7" font-family="monospace" fill="currentColor" stroke="none" opacity="0.7">GARAGE</text>
+  <!-- Trees (circles) -->
+  <circle cx="40" cy="50" r="14" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="40" cy="50" r="6" stroke-width="0.8"/>
+  <circle cx="280" cy="50" r="14" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="280" cy="50" r="6" stroke-width="0.8"/>
+  <circle cx="280" cy="200" r="10" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="280" cy="200" r="4" stroke-width="0.8"/>
+  <circle cx="40" cy="200" r="10" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="40" cy="200" r="4" stroke-width="0.8"/>
+  <!-- Building label -->
+  <text x="115" y="130" font-size="8" font-family="monospace" fill="currentColor" stroke="none" opacity="0.7">PROPOSED</text>
+  <text x="120" y="142" font-size="8" font-family="monospace" fill="currentColor" stroke="none" opacity="0.7">RESIDENCE</text>
+  <!-- Dimension annotations -->
+  <line x1="60" y1="270" x2="260" y2="270" stroke-width="0.6"/>
+  <line x1="60" y1="266" x2="60" y2="274"/>
+  <line x1="260" y1="266" x2="260" y2="274"/>
+  <text x="130" y="268" font-size="6" font-family="monospace" fill="currentColor" stroke="none" opacity="0.6">20'-0" SETBACK</text>
+  <!-- North arrow -->
+  <line x1="295" y1="35" x2="295" y2="18" stroke-width="1"/>
+  <polygon points="295,15 291,24 295,22 299,24" fill="currentColor" stroke="none" opacity="0.8"/>
+  <text x="291" y="42" font-size="7" font-family="monospace" fill="currentColor" stroke="none" opacity="0.7">N</text>
+</svg>
