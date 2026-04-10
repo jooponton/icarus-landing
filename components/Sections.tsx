@@ -120,7 +120,7 @@ export function Waitlist() {
           Be the first to try Atria
         </h2>
         <p className="mb-8 text-base text-white/60">
-          We&apos;re onboarding homeowners one by one. Grab your spot.
+          We&apos;re onboarding an elite group of builders and doers. Be one of them. Grab your beta spot before we close.
         </p>
 
         {submitted ? (
