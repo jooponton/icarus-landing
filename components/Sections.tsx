@@ -83,10 +83,31 @@ export function Problem() {
 export function Waitlist() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) setSubmitted(true);
+    if (!email) return;
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError("Network error. Try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -126,12 +147,14 @@ export function Waitlist() {
             <Button
               type="submit"
               size="lg"
-              className="bg-amber-500 text-black hover:bg-amber-400 font-semibold"
+              disabled={loading}
+              className="bg-amber-500 text-black hover:bg-amber-400 font-semibold disabled:opacity-60"
             >
-              Get Early Access
+              {loading ? "Joining..." : "Get Early Access"}
             </Button>
           </form>
         )}
+        {error && <p className="mt-3 text-xs text-red-400">{error}</p>}
         <p className="mt-4 text-xs text-white/30">No spam. We&apos;ll email you when it&apos;s ready.</p>
       </div>
     </section>
