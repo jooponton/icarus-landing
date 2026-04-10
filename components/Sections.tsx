@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/Logo";
 import { useState } from "react";
 
 export function HowItWorks() {
@@ -164,8 +165,10 @@ export function Waitlist() {
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#0a0a0a] py-8 px-6 text-center">
-      <p className="text-sm font-semibold text-white">Atria.</p>
-      <p className="mt-1 text-xs text-white/30">
+      <div className="flex justify-center">
+        <Logo variant="lockup" className="text-2xl" iconSize={24} />
+      </div>
+      <p className="mt-2 text-xs text-white/30">
         See your dream build before you spend a dime.
       </p>
       <p className="mt-3 text-xs text-white/20">
