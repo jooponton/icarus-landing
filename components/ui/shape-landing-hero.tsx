@@ -7,33 +7,26 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 
 const ROTATING_WORDS = [
-  "gas station",
+  "adaptive reuse pad",
+  "mixed-use infill",
+  "multifamily wrap",
+  "office conversion",
+  "dark anchor",
+  "surface-lot teardown",
+  "mall repositioning",
+  "grocery-anchored center",
+  "build-to-rent",
+  "podium deal",
+  "garden-style infill",
+  "5-over-1 wrap",
   "shopping center",
-  "office",
-  "bakery",
-  "cookie shop",
-  "lemonade stand",
-  "bank",
-  "coffee shop",
-  "storefront",
-  "boutique build-out",
-  "rough-in",
-  "anchor store",
   "high-rise",
   "distribution center",
-  "car wash",
   "data center",
-  "dealership",
-  "resort",
-  "gym",
-  "stadium",
-  "pickleball court",
-  "manufacturing plant",
-  "refinery",
-  "tilt-up warehouse",
-  "multi-tenant project",
   "urban redevelopment",
-  "grocery store",
+  "Class A office",
+  "light industrial",
+  "tilt-up warehouse",
 ];
 
 // Architectural blueprint accent — replaces the abstract pill shapes
@@ -262,9 +255,9 @@ function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
-              Get some pictures of your property or project, and tell our AI what you had in mind. Watch it appear in 3D on your actual lot.
+              Fly a candidate site. Describe the program. See a buildable, zoning-aware overlay on the real footage and ship a board-ready package to IC.
               <br />
-              <span className="underline underline-offset-4 font-bold">No architect required.</span>
+              <span className="underline underline-offset-4 font-bold">Replaces a $30K feasibility package.</span>
             </p>
           </motion.div>
 
@@ -280,7 +273,7 @@ function HeroGeometric({
               href="#waitlist"
               className="px-8 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm tracking-wide transition-colors duration-200"
             >
-              Get Early Access
+              Request a Conversation
             </a>
             <a
               href="#how-it-works"

@@ -12,9 +12,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Atria — See your dream build before you spend a dime",
+  title: "Atria — From drone to deal memo. In a week, not a quarter.",
   description:
-    "Fly a drone over your property. Tell our AI what you're imagining. Watch it appear in 3D on your actual lot. No architect required.",
+    "Atria is a feasibility platform for real estate developers. Fly a candidate site, describe the program, and see a buildable, zoning-aware overlay on the real footage — for a fraction of the cost of a custom feasibility package. Built for retail REIT adaptive reuse and merchant builder multifamily teams.",
 };
 
 export default function RootLayout({

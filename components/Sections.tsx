@@ -8,18 +8,18 @@ export function HowItWorks() {
   const steps = [
     {
       num: "1",
-      title: "Grab a few pictures or video",
-      body: "Fly your drone, or snap a few pictures of your plot or patch of land. (Any land works, why limit your imagination?)",
+      title: "Fly the site",
+      body: "Drone footage preferred; aerial imagery works for the first pass. Any candidate site in your redevelopment or acquisitions pipeline.",
     },
     {
       num: "2",
-      title: "Describe your vision",
-      body: "Chat with our AI architect. Tell it what you want — style, size, vibe. It asks the right questions.",
+      title: "Describe the program",
+      body: "Plain English: '280 units, 15K ground-floor retail, conforming to the current zoning envelope.' We check setbacks, FAR, and height limits as we generate.",
     },
     {
       num: "3",
-      title: "See it in 3D",
-      body: "Your building appears on your actual lot. Walk around it. Share it. Export it to any major tool (ArchiCAD, Revit, Vectorworks or SketchUp) for your developer or contractor and get building.",
+      title: "Ship to IC",
+      body: "Board-ready photorealistic overlay on the real site. Multiple design options, preliminary unit / SF / yield numbers, and clean CAD export your architect of record can pick up on day one.",
     },
   ];
 
@@ -30,7 +30,7 @@ export function HowItWorks() {
           How It Works
         </p>
         <h2 className="mb-12 text-center text-3xl font-bold text-white md:text-5xl">
-          Three steps from idea to 3D reality
+          Three steps from site to IC memo
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
           {steps.map((s) => (
@@ -59,22 +59,17 @@ export function Problem() {
           The Problem We Solve
         </p>
         <h2 className="mb-6 text-3xl font-bold text-white md:text-5xl">
-          The $10,000 gap between your idea and reality
+          The $30K bottleneck between a site and an IC memo
         </h2>
         <p className="mb-4 text-base text-white/60 leading-relaxed">
-          You have a vision for your property. Maybe it&apos;s a backyard ADU, a home
-          addition, or a complete renovation. But to see what it could actually
-          look like, you&apos;d need to hire an architect —{" "}
+          Your acquisitions team evaluates 5–10 sites for every deal that closes. Custom feasibility renders run{" "}
           <strong className="text-white">
-            $5,000 to $15,000 just for initial concept renderings.
+            $15,000 to $50,000 per site and take 3–6 weeks
           </strong>{" "}
-          Most people never take that first step. The project stays in their head
-          for years.
+          — so you run them only after you&apos;ve already committed capital, one option at a time, never on the long tail of your portfolio where the real repositioning upside is hiding.
         </p>
         <p className="text-base text-white/60 leading-relaxed">
-          Atria changes that. For a fraction of the cost, in minutes instead of
-          weeks, you can see your build on your actual property before committing
-          a dollar to construction.
+          Atria compresses that loop. Photorealistic, zoning-aware feasibility for any candidate site in under a day, for a fraction of the cost. Screen the whole pipeline. Walk into IC with multiple options and an envelope check that&apos;s already been run.
         </p>
       </div>
     </section>
@@ -115,13 +110,13 @@ export function Waitlist() {
     <section id="waitlist" className="bg-[#0f0f0f] py-24 px-6 md:px-12">
       <div className="mx-auto max-w-xl text-center">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-amber-500">
-          Join the Waitlist
+          Phase 1 — 5 Pilot Slots Open
         </p>
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Be the first to try Atria
+          Request a feasibility conversation
         </h2>
         <p className="mb-8 text-base text-white/60">
-          We&apos;re onboarding an elite group of builders and doers. Be one of them. Grab your beta spot before we close.
+          Currently in discovery with retail REIT redevelopment teams and merchant builder multifamily developers. Drop your work email and we&apos;ll schedule a 30-minute conversation — no pitch, no demo theater.
         </p>
 
         {submitted ? (
@@ -131,9 +126,9 @@ export function Waitlist() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
               </span>
-              <span className="text-sm font-semibold text-green-400">You&apos;re on the list!</span>
+              <span className="text-sm font-semibold text-green-400">We&apos;ll be in touch.</span>
             </div>
-            <p className="text-sm text-white/60">We&apos;ll email you at <strong className="text-white">{email}</strong> when your spot opens up.</p>
+            <p className="text-sm text-white/60">We&apos;ll reach out to <strong className="text-white">{email}</strong> to book a 30-minute conversation.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
@@ -142,7 +137,7 @@ export function Waitlist() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
+              placeholder="you@yourfirm.com"
               className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
             />
             <Button
@@ -151,12 +146,12 @@ export function Waitlist() {
               disabled={loading}
               className="bg-amber-500 text-black hover:bg-amber-400 font-semibold disabled:opacity-60"
             >
-              {loading ? "Joining..." : "Get Early Access"}
+              {loading ? "Sending..." : "Request Conversation"}
             </Button>
           </form>
         )}
         {error && <p className="mt-3 text-xs text-red-400">{error}</p>}
-        <p className="mt-4 text-xs text-white/30">No spam. We&apos;ll email you when it&apos;s ready.</p>
+        <p className="mt-4 text-xs text-white/30">No spam. 30 minutes, founder-led, no pitch.</p>
       </div>
     </section>
   );
@@ -169,7 +164,7 @@ export function Footer() {
         <Logo variant="lockup" className="text-2xl" iconSize={24} />
       </div>
       <p className="mt-2 text-xs text-white/30">
-        See your dream build before you spend a dime.
+        From drone to deal memo. In a week, not a quarter.
       </p>
       <p className="mt-3 text-xs text-white/20">
         © {new Date().getFullYear()} Atria. All rights reserved.
