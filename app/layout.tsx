@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import AuthNav from "@/components/AuthNav";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,6 +10,10 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   style: ["normal", "italic"],
   variable: "--font-instrument-serif",
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -24,8 +29,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} ${instrumentSerif.variable} bg-[#0a0a0a] antialiased`}>
-        {children}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"69e23a6a02816b001d7c13e8"})},document.head.appendChild(o)}initApollo();`,
+          }}
+        />
+      </head>
+      <body className={`${inter.className} ${instrumentSerif.variable} ${jetbrainsMono.variable} bg-[#0a0a0a] antialiased`}>
+        <AuthNav />
+        <div className="pt-16">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>

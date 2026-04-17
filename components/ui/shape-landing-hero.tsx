@@ -225,7 +225,7 @@ function HeroGeometric({
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
             </span>
-            <span className="text-sm text-white/60 tracking-wide">{badge}</span>
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-white/60 tracking-wide">{badge}</span>
           </motion.div>
 
           {/* Headline */}
@@ -253,7 +253,7 @@ function HeroGeometric({
             initial="hidden"
             animate="visible"
           >
-            <p className="text-base sm:text-lg md:text-xl text-white/40 mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+            <p className="font-[family-name:var(--font-jetbrains-mono)] text-base sm:text-lg md:text-xl text-white/40 mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
               Fly a candidate site. Describe the program. See a buildable, zoning-aware overlay on the real footage and ship a board-ready package to IC.
             </p>
           </motion.div>
