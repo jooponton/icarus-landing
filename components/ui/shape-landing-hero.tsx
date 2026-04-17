@@ -96,13 +96,18 @@ function RotatingWord() {
   const [index, setIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     const word = ROTATING_WORDS[index];
     const speed = isDeleting ? 40 : 80;
 
     if (!isDeleting && displayed === word) {
-      const pause = setTimeout(() => setIsDeleting(true), 1500);
+      setIsTyping(false);
+      const pause = setTimeout(() => {
+        setIsTyping(true);
+        setIsDeleting(true);
+      }, 1500);
       return () => clearTimeout(pause);
     }
     if (isDeleting && displayed === "") {
@@ -111,6 +116,7 @@ function RotatingWord() {
       return;
     }
 
+    setIsTyping(true);
     const id = setTimeout(() => {
       setDisplayed(isDeleting ? word.slice(0, displayed.length - 1) : word.slice(0, displayed.length + 1));
     }, speed);
@@ -120,7 +126,11 @@ function RotatingWord() {
   return (
     <>
       {displayed}
-      <span className="animate-pulse">|</span>
+      <span
+        className={isTyping ? "animate-cursor-blink" : "opacity-100"}
+      >
+        |
+      </span>
     </>
   );
 }

@@ -191,6 +191,15 @@ body {
   animation: pulse-amber-glow 3.6s ease-in-out infinite;
 }
 
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 530ms steps(1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .glow-pulse-amber {
     animation: none;
