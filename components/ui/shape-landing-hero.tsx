@@ -14,7 +14,6 @@ const ROTATING_WORDS = [
   "dark anchor",
   "surface-lot teardown",
   "mall repositioning",
-  "grocery-anchored center",
   "build-to-rent",
   "podium deal",
   "garden-style infill",
@@ -149,7 +148,7 @@ function HeroGeometric({
   };
 
   return (
-    <div className="relative h-screen min-h-[700px] w-full flex flex-col items-center justify-center overflow-hidden bg-[#030303]">
+    <div className="relative h-[calc(100vh-4rem)] min-h-[700px] w-full flex flex-col items-center justify-center overflow-hidden bg-[#030303]">
       {/* Subtle blueprint-blue ambient glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-sky-900/[0.12] via-transparent to-indigo-900/[0.08] blur-3xl" />
 
@@ -256,8 +255,6 @@ function HeroGeometric({
           >
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
               Fly a candidate site. Describe the program. See a buildable, zoning-aware overlay on the real footage and ship a board-ready package to IC.
-              <br />
-              <span className="underline underline-offset-4 font-bold">Replaces a $30K feasibility package.</span>
             </p>
           </motion.div>
 
@@ -271,13 +268,13 @@ function HeroGeometric({
           >
             <a
               href="#waitlist"
-              className="px-8 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm tracking-wide transition-colors duration-200"
+              className="liquid-btn-amber px-8 py-3 rounded-full font-semibold text-sm tracking-wide"
             >
               Request a Conversation
             </a>
             <a
               href="#how-it-works"
-              className="px-8 py-3 rounded-full border border-white/[0.15] text-white/70 hover:text-white hover:border-white/30 text-sm tracking-wide transition-colors duration-200"
+              className="liquid-btn px-8 py-3 rounded-full text-sm tracking-wide"
             >
               See How It Works
             </a>

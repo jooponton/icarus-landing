@@ -33,10 +33,11 @@ export function HowItWorks() {
           Three steps from site to IC memo
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
-          {steps.map((s) => (
+          {steps.map((s, i) => (
             <div
               key={s.num}
-              className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
+              className="liquid-glass glow-pulse-amber rounded-2xl p-8"
+              style={{ animationDelay: `${i * 1.2}s` }}
             >
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-black">
                 {s.num}
@@ -110,7 +111,7 @@ export function Waitlist() {
     <section id="waitlist" className="bg-[#0f0f0f] py-24 px-6 md:px-12">
       <div className="mx-auto max-w-xl text-center">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-amber-500">
-          Phase 1 — 5 Pilot Slots Open
+          3 of 25 Beta Spots Open for Early Access
         </p>
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
           Request a feasibility conversation
@@ -120,7 +121,7 @@ export function Waitlist() {
         </p>
 
         {submitted ? (
-          <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-8">
+          <div className="liquid-glass-amber rounded-2xl p-8">
             <div className="mb-2 flex items-center justify-center gap-2">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
@@ -144,7 +145,7 @@ export function Waitlist() {
               type="submit"
               size="lg"
               disabled={loading}
-              className="bg-amber-500 text-black hover:bg-amber-400 font-semibold disabled:opacity-60"
+              className="liquid-btn-amber font-semibold"
             >
               {loading ? "Sending..." : "Request Conversation"}
             </Button>
