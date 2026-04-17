@@ -167,6 +167,10 @@ export function Footer() {
       <p className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/30">
         From drone to deal memo. In a week, not a quarter.
       </p>
+      <div className="mt-4 flex justify-center gap-5 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/40">
+        <a href="/privacy" className="hover:text-amber-500">Privacy</a>
+        <a href="/terms" className="hover:text-amber-500">Terms</a>
+      </div>
       <p className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/20">
         © {new Date().getFullYear()} Atria. All rights reserved.
       </p>
