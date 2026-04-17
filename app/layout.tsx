@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Atria — From drone to deal memo. In a week, not a quarter.",
+  title: "Atria — From drone to deal memo.",
   description:
     "Atria is a feasibility platform for real estate developers. Fly a candidate site, describe the program, and see a buildable, zoning-aware overlay on the real footage — for a fraction of the cost of a custom feasibility package. Built for retail REIT adaptive reuse and merchant builder multifamily teams.",
 };

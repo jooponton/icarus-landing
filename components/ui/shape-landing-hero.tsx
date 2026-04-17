@@ -239,10 +239,14 @@ function HeroGeometric({
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 whitespace-nowrap">
                 See your <RotatingWord />
               </span>
-              <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-white/90 to-indigo-300">
-                {title2}
-              </span>
+              {title2 && (
+                <>
+                  <br />
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-white/90 to-indigo-300">
+                    {title2}
+                  </span>
+                </>
+              )}
             </h1>
           </motion.div>
 
