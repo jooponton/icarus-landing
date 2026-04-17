@@ -200,6 +200,16 @@ body {
   animation: cursor-blink 530ms steps(1) infinite;
 }
 
+@keyframes logo-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-logo-scroll {
+  animation: logo-scroll 80s linear infinite;
+  width: max-content;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .glow-pulse-amber {
     animation: none;

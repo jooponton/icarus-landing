@@ -1,6 +1,6 @@
 /**
- * Atria brand lockup — amber A-frame icon + Instrument Serif wordmark.
- * Brand spec: .superdesign/atria-brand-kit.md
+ * Atria brand lockup — amber gateway arch + Plus Jakarta Sans wordmark.
+ * Source: SuperDesign gateway portal direction, draft 29a684d8.
  */
 
 type LogoProps = {
@@ -12,25 +12,25 @@ type LogoProps = {
 function AtriaIcon({
   size = 28,
   stroke = "#f59e0b",
-  strokeWidth = 2,
 }: {
   size?: number;
   stroke?: string;
-  strokeWidth?: number;
 }) {
-  // Atria mark: outer gable triangle + inner chevron (inner peak).
-  // Source: SuperDesign brand guidelines draft 389a5c27.
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 100 100"
+      viewBox="0 0 1000 1000"
       fill="none"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M50 15L85 75H15L50 15Z" stroke={stroke} strokeWidth={strokeWidth} />
-      <path d="M35 75L50 45L65 75" stroke={stroke} strokeWidth={strokeWidth} />
+      <path
+        d="M220 850C220 400 350 150 500 150C650 150 780 400 780 850"
+        stroke={stroke}
+        strokeWidth="100"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -51,7 +51,7 @@ export default function Logo({
   if (variant === "wordmark") {
     return (
       <span
-        className={`font-[family-name:var(--font-instrument-serif)] text-white leading-none tracking-tight ${className}`}
+        className={`font-[family-name:var(--font-plus-jakarta)] font-bold text-white leading-none tracking-[-0.05em] ${className}`}
       >
         atria
       </span>
@@ -62,7 +62,7 @@ export default function Logo({
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
       <AtriaIcon size={iconSize} />
-      <span className="font-[family-name:var(--font-instrument-serif)] text-white leading-none tracking-tight">
+      <span className="font-[family-name:var(--font-plus-jakarta)] font-bold text-white leading-none tracking-[-0.05em]">
         atria
       </span>
     </span>

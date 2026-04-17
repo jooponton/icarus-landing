@@ -28,6 +28,16 @@ const ROTATING_WORDS = [
   "tilt-up warehouse",
 ];
 
+const LOGOS = [
+  { name: "Kimco Realty", src: "/logos/kimco.png" },
+  { name: "Brixmor", src: "/logos/brixmor.svg" },
+  { name: "Blackstone", src: "/logos/blackstone.svg" },
+  { name: "D.R. Horton", src: "/logos/dr-horton.svg", large: true },
+  { name: "Camden", src: "/logos/camden.png" },
+  { name: "Tishman Speyer", src: "/logos/tishman-speyer.png" },
+  { name: "Hines", src: "/logos/hines.svg" },
+];
+
 // Architectural blueprint accent — replaces the abstract pill shapes
 function BlueprintAccent({
   className,
@@ -288,6 +298,37 @@ function HeroGeometric({
             >
               See How It Works
             </a>
+          </motion.div>
+
+          {/* Social proof logos */}
+          <motion.div
+            custom={4}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="mt-16 w-full max-w-3xl mx-auto"
+          >
+            <p className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/30 uppercase tracking-widest text-center mb-6">
+              Trusted with feedback from some of the best
+            </p>
+            <div className="relative overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#030303] to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#030303] to-transparent z-10 pointer-events-none" />
+              <div className="flex animate-logo-scroll">
+                {[...LOGOS, ...LOGOS].map((logo, i) => (
+                  <div
+                    key={`${logo.name}-${i}`}
+                    className="flex-shrink-0 mx-12 flex items-center justify-center opacity-80 grayscale brightness-150 hover:opacity-100 transition-opacity"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className={`w-auto object-contain ${logo.large ? "h-16 max-w-[260px]" : "h-10 max-w-[180px]"}`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

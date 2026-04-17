@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, Instrument_Serif, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import AuthNav from "@/components/AuthNav";
 import "./globals.css";
@@ -14,6 +14,11 @@ const instrumentSerif = Instrument_Serif({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+});
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700", "800"],
+  variable: "--font-plus-jakarta",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +41,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${instrumentSerif.variable} ${jetbrainsMono.variable} bg-[#0a0a0a] antialiased`}>
+      <body className={`${inter.className} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} bg-[#0a0a0a] antialiased`}>
         <AuthNav />
         <div className="pt-16">
           {children}
