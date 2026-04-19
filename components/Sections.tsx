@@ -81,7 +81,7 @@ export function Waitlist() {
           3 of 25 Beta Spots Open for Early Access
         </p>
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Request Beta Access
+          Let&apos;s get you in.
         </h2>
         <p className="mb-8 font-[family-name:var(--font-jetbrains-mono)] text-base text-white/60">
           Currently in discovery with retail REIT redevelopment teams and merchant builder multifamily developers. Create an account, tell us about your pipeline, and we&apos;ll schedule a 30-minute conversation — no pitch, no demo theater.
