@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif, JetBrains_Mono, Plus_Jakarta_Sans } from "next
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import AuthNav from "@/components/AuthNav";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,7 +39,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"69e23a6a02816b001d7c13e8"})},document.head.appendChild(o)}initApollo();`,
+            __html: `(function(){function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"69e23a6a02816b001d7c13e8"})},document.head.appendChild(o)}try{if(localStorage.getItem("atria-cookie-consent")==="accepted"){initApollo();}else{window.__atriaLoadApollo=initApollo;}}catch(e){}})();`,
           }}
         />
       </head>
@@ -47,6 +48,7 @@ export default function RootLayout({
         <div className="pt-16">
           {children}
         </div>
+        <CookieBanner />
         <Analytics />
         <SpeedInsights />
       </body>

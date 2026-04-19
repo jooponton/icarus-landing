@@ -112,6 +112,7 @@ export function Footer() {
       <div className="mt-4 flex justify-center gap-5 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/40">
         <a href="/privacy" className="hover:text-amber-500">Privacy</a>
         <a href="/terms" className="hover:text-amber-500">Terms</a>
+        <a href="/cookies" className="hover:text-amber-500">Cookies</a>
       </div>
       <p className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/20">
         © {new Date().getFullYear()} Atria. All rights reserved.
