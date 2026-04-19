@@ -64,26 +64,26 @@ body {
 
 /* Neutral glass surface (modals, cards) */
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.18),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.22),
-    0 20px 50px -16px rgba(0, 0, 0, 0.55);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.15),
+    0 20px 50px -16px rgba(0, 0, 0, 0.45);
 }
 
 /* Amber-tinted glass (success / confirmation cards) */
 .liquid-glass-amber {
-  background: rgba(245, 158, 11, 0.09);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(245, 158, 11, 0.04);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(251, 191, 36, 0.18);
   box-shadow:
-    inset 0 1px 0 0 rgba(251, 191, 36, 0.28),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.2),
-    0 20px 50px -16px rgba(245, 158, 11, 0.28);
+    inset 0 1px 0 0 rgba(251, 191, 36, 0.16),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.15),
+    0 20px 50px -16px rgba(245, 158, 11, 0.22);
 }
 
 /* Neutral glass button */

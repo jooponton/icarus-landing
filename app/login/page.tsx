@@ -18,7 +18,8 @@ export default function LoginPage() {
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const next = searchParams.get("next") || "/pilot";
+  const rawNext = searchParams.get("next") || "/pilot";
+  const next = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/pilot";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

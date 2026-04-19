@@ -1,8 +1,4 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
-import { useState } from "react";
 
 export function HowItWorks() {
   const steps = [
@@ -78,35 +74,6 @@ export function Problem() {
 }
 
 export function Waitlist() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setLoading(true);
-    setError("");
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.error || "Something went wrong. Try again.");
-      } else {
-        setSubmitted(true);
-      }
-    } catch {
-      setError("Network error. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <section id="waitlist" className="bg-[#0f0f0f] py-24 px-6 md:px-12">
       <div className="mx-auto max-w-xl text-center">
@@ -114,45 +81,20 @@ export function Waitlist() {
           3 of 25 Beta Spots Open for Early Access
         </p>
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Request a feasibility conversation
+          Request a beta invite
         </h2>
         <p className="mb-8 font-[family-name:var(--font-jetbrains-mono)] text-base text-white/60">
-          Currently in discovery with retail REIT redevelopment teams and merchant builder multifamily developers. Drop your work email and we&apos;ll schedule a 30-minute conversation — no pitch, no demo theater.
+          Currently in discovery with retail REIT redevelopment teams and merchant builder multifamily developers. Create an account, tell us about your pipeline, and we&apos;ll schedule a 30-minute conversation — no pitch, no demo theater.
         </p>
 
-        {submitted ? (
-          <div className="liquid-glass-amber rounded-2xl p-8">
-            <div className="mb-2 flex items-center justify-center gap-2">
-              <span className="relative flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-              </span>
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-sm font-semibold text-green-400">We&apos;ll be in touch.</span>
-            </div>
-            <p className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-white/60">We&apos;ll reach out to <strong className="text-white">{email}</strong> to book a 30-minute conversation.</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@yourfirm.com"
-              className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
-            />
-            <Button
-              type="submit"
-              size="lg"
-              disabled={loading}
-              className="liquid-btn-amber font-semibold"
-            >
-              {loading ? "Sending..." : "Request Conversation"}
-            </Button>
-          </form>
-        )}
-        {error && <p className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-xs text-red-400">{error}</p>}
-        <p className="mt-4 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/30">No spam. 30 minutes, founder-led, no pitch.</p>
+        <a
+          href="/signup"
+          className="liquid-btn-amber inline-block rounded-full px-8 py-3 text-sm font-semibold tracking-wide"
+        >
+          Request Beta Access →
+        </a>
+
+        <p className="mt-4 font-[family-name:var(--font-jetbrains-mono)] text-xs text-white/30">No spam. Quick call, no pitch.</p>
       </div>
     </section>
   );

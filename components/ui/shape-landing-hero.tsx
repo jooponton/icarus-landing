@@ -287,10 +287,10 @@ function HeroGeometric({
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="#waitlist"
+              href="/signup"
               className="liquid-btn-amber px-8 py-3 rounded-full font-semibold text-sm tracking-wide"
             >
-              Request a Conversation
+              Request Beta Access →
             </a>
             <a
               href="#how-it-works"

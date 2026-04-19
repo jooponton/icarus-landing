@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
+import PasswordChecklist, { isPasswordValid } from "@/components/PasswordChecklist";
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -20,6 +21,10 @@ export default function ResetPasswordPage() {
     e.preventDefault();
     if (password !== confirm) {
       setError("Passwords don't match.");
+      return;
+    }
+    if (!isPasswordValid(password)) {
+      setError("Password doesn't meet all requirements.");
       return;
     }
     setLoading(true);
@@ -85,12 +90,13 @@ export default function ResetPasswordPage() {
               id="password"
               type="password"
               required
-              minLength={6}
+              minLength={12}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Min. 6 characters"
+              placeholder="Min. 12 characters"
               className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
             />
+            <PasswordChecklist password={password} />
           </div>
           <div>
             <label htmlFor="confirm" className="mb-1 block font-[family-name:var(--font-jetbrains-mono)] text-xs font-medium uppercase tracking-widest text-white/40">
@@ -100,7 +106,7 @@ export default function ResetPasswordPage() {
               id="confirm"
               type="password"
               required
-              minLength={6}
+              minLength={12}
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
               placeholder="Re-enter password"

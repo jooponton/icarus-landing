@@ -6,6 +6,7 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
+import PasswordChecklist, { isPasswordValid } from "@/components/PasswordChecklist";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -23,6 +24,12 @@ export default function SignupPage() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!isPasswordValid(password)) {
+      setError("Password doesn't meet all requirements.");
+      setLoading(false);
+      return;
+    }
 
     const { error } = await supabase.auth.signUp({
       email,
@@ -133,12 +140,13 @@ export default function SignupPage() {
               id="password"
               type="password"
               required
-              minLength={6}
+              minLength={12}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Min. 6 characters"
+              placeholder="Min. 12 characters"
               className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
             />
+            <PasswordChecklist password={password} />
           </div>
           <Button
             type="submit"
