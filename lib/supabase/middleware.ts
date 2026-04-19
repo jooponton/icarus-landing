@@ -39,9 +39,11 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Authenticated users are scoped to the pilot surface until we have more app to show them
+  // Authenticated users are scoped to the pilot surface until we have more app to show them.
+  // Homepage is allowed so they can click the logo to return.
   if (user) {
     const allowed =
+      pathname === "/" ||
       pathname === "/pilot" ||
       pathname.startsWith("/auth/") ||
       pathname === "/privacy" ||
