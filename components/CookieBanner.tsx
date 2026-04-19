@@ -41,7 +41,7 @@ export default function CookieBanner() {
         role="dialog"
         aria-live="polite"
         aria-label="Cookie preferences"
-        className="liquid-glass pointer-events-auto w-full max-w-3xl rounded-2xl p-5 shadow-2xl sm:p-6"
+        className="liquid-glass pointer-events-auto w-full max-w-3xl rounded-2xl border border-white/15 bg-[#0f0f0f]/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6"
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <div className="text-sm text-white/70">
