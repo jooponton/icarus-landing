@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-type DottedSurfaceProps = Omit<React.ComponentProps<"div">, "ref"> & {
+type DottedSurfaceProps = Omit<React.ComponentProps<"div">, "ref" | "color"> & {
   color?: [number, number, number];
 };
 
