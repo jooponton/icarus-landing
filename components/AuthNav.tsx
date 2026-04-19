@@ -64,7 +64,7 @@ export default function AuthNav() {
                 href="/pilot"
                 className="text-sm text-white/60 transition-colors hover:text-white"
               >
-                Pilot
+                Beta
               </Link>
               <button
                 onClick={handleLogout}
