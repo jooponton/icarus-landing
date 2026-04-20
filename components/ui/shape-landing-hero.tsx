@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import HeroWave from "@/components/ui/dynamic-wave-canvas-background";
 import { AwardBadge } from "@/components/ui/award-badge";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 
 const ROTATING_WORDS = [
   "adaptive reuse pad",
@@ -296,9 +297,24 @@ function HeroGeometric({
             </p>
           </motion.div>
 
-          {/* CTAs */}
+          {/* Beta milestone pill */}
           <motion.div
             custom={3}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center justify-center mb-5"
+          >
+            <div className="group rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-sm text-sm transition-colors hover:bg-white/[0.06]">
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1.5 font-[family-name:var(--font-jetbrains-mono)]">
+                <span>🎉 Atria has just surpassed 150 users in beta!</span>
+              </AnimatedShinyText>
+            </div>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            custom={4}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
