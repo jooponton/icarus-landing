@@ -5,6 +5,8 @@ import { Circle } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import HeroWave from "@/components/ui/dynamic-wave-canvas-background";
+import { AwardBadge } from "@/components/ui/award-badge";
 
 const ROTATING_WORDS = [
   "adaptive reuse pad",
@@ -169,6 +171,11 @@ function HeroGeometric({
 
   return (
     <div className="relative h-[calc(100vh-4rem)] min-h-[700px] w-full flex flex-col items-center justify-center overflow-hidden bg-[#030303]">
+      {/* Dynamic wave canvas — animated background */}
+      <div className="absolute inset-0">
+        <HeroWave />
+      </div>
+
       {/* Subtle blueprint-blue ambient glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-sky-900/[0.12] via-transparent to-indigo-900/[0.08] blur-3xl" />
 
@@ -233,6 +240,17 @@ function HeroGeometric({
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Product Hunt award badge */}
+          <motion.div
+            custom={0}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex justify-center mb-6"
+          >
+            <AwardBadge type="product-of-the-day" place={1} />
+          </motion.div>
+
           {/* Badge */}
           <motion.div
             custom={0}
