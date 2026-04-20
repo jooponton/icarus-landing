@@ -26,7 +26,7 @@ export function HowItWorks() {
           How It Works
         </p>
         <h2 className="mb-12 text-center text-3xl font-bold text-white md:text-5xl">
-          Three steps from site to IC memo
+          Three steps from site to deal memo
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
           {steps.map((s, i) => (
@@ -56,7 +56,7 @@ export function Problem() {
           The Problem We Solve
         </p>
         <h2 className="mb-6 text-3xl font-bold text-white md:text-5xl">
-          The $30K bottleneck between a site and an IC memo
+          The $30K bottleneck between a site and a deal memo
         </h2>
         <p className="mb-4 font-[family-name:var(--font-jetbrains-mono)] text-base text-white/60 leading-relaxed">
           Your acquisitions team evaluates 5–10 sites for every deal that closes. Custom feasibility renders run{" "}
@@ -84,7 +84,7 @@ export function Waitlist() {
           Let&apos;s get you in.
         </h2>
         <p className="mb-8 font-[family-name:var(--font-jetbrains-mono)] text-base text-white/60">
-          Currently in discovery with retail REIT redevelopment teams and merchant builder multifamily developers. Create an account, tell us about your pipeline, and we&apos;ll schedule a 30-minute conversation — no pitch, no demo theater.
+          Currently in discovery with a diverse group of developers, contractors, and designers. Create your account, tell us about your pipeline, and we&apos;ll get you a beta code sent over &mdash; no pitch.
         </p>
 
         <a
