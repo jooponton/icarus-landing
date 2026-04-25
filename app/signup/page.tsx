@@ -1,16 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
 import PasswordChecklist, { isPasswordValid } from "@/components/PasswordChecklist";
+import { signUpWithConfirmation } from "./actions";
 
 export default function SignupPage() {
-  const router = useRouter();
-
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,17 +29,10 @@ export default function SignupPage() {
       return;
     }
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { full_name: fullName },
-        emailRedirectTo: `${window.location.origin}/auth/confirm`,
-      },
-    });
+    const result = await signUpWithConfirmation({ fullName, email, password });
 
-    if (error) {
-      setError(error.message);
+    if (!result.ok) {
+      setError(result.error);
       setLoading(false);
     } else {
       setConfirmSent(true);
